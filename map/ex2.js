@@ -42,10 +42,24 @@ En sortie: [
 
  */
 
-function getFoodCategories(foods) {
+
+const getFoodCategories = (foods)  => {
+  return foods.map (obj => {
+    if (  obj.isVegetarian  === true) { 
+     return `${obj.food} is suitable for vegetarians`
+    }
+    else {
+      return `${obj.food} is not suitable for vegetarians`
+    }
+  })
 }
 
 
+// Méthode ternaire
+// const getFoodCategories = (foods)  => {
+// return foods.map(v=>v.isVegetarian==true?
+//   `${obj.food} is suitable for vegetarians`:
+//   `${obj.food} is not suitable for vegetarians`)}
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;
