@@ -61,21 +61,19 @@ En sortie:
 
 
 const getMoviesFreshness = (movies)  => {
-  return movies.map (obj => {
+  const arr =  movies.map (obj => {
     if (obj.rating < 60) { 
-     return 
-     `${obj.name}
-      ${obj.rating}
-     obj.label = 'rotten'`
+    obj.label = 'rotten'
     }
-    else if (obj.rating > 60 && obj.rating <= 75) {
-      return obj.label = 'fresh'
+    else if (obj.rating > 75) {
+      obj.label = 'certified fresh'
     }
     else {
-      return obj.label = 'certified fresh'
+      obj.label = 'fresh'
     }
-  }
-  )
+    return obj;
+  })
+  return arr;
 }
 
 
